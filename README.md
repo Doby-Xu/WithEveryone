@@ -1,0 +1,39 @@
+# WithEveryone: Unified Planning and Identity Grounding for Group Image Generation
+
+[![arXiv](https://img.shields.io/badge/arXiv-2510.14975-b31b1b.svg)](https://arxiv.org/abs/2510.14975)
+
+[English](README.md) | [简体中文](README_CN.md)
+
+**Bring everyone into the frame.**
+
+WithEveryone generates coherent group images from five to ten reference identities while preserving who is who.
+
+![WithEveryone teaser](assets/teaser.png)
+
+## 🚀 Release Plan
+
+An open-source release is on the way!
+
+The research version presented in our paper is built on a foundation model whose licensing terms do not allow us to release its checkpoint.
+
+To provide the community with an open alternative, we are actively training a new version on a foundation model that supports open release.
+
+Code and checkpoints will be shared once the new version is ready—stay tuned!
+
+## 🔥 How It Works
+
+**Address every identity.** Each reference becomes a dedicated identity token.
+
+**Plan before generation.** Identity-aware layout reasoning organizes every person in the scene.
+
+**Supervise the right face.** Layout-Grounded ID Loss applies identity supervision to the intended region.
+
+![WithEveryone pipeline](assets/pipeline.png)
+
+## 📑 Citation
+
+Citation information will be available soon.
+
+```bibtex
+% Coming soon.
+```

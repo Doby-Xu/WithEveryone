@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="WithEveryone unifies planning and identity grounding for group image generation with five to ten reference identities."
+    >
+    <meta name="theme-color" content="#f6f3ed">
+    <title>WithEveryone: Unified Planning and Identity Grounding for Group Image Generation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="WithEveryone home">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span>WithEveryone</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#gallery">Results</a>
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#release">Release</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-glow hero-glow-blue" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-green" aria-hidden="true"></div>
+        <div class="hero-copy reveal">
+          <h1>WithEveryone</h1>
+
+          <div class="authors" aria-label="Authors">
+            <span><a href="https://doby-xu.github.io/">Hengyuan Xu</a><sup>1,2</sup></span>
+            <span><a href="https://github.com/wangqixun">Qixun Wang</a><sup>2</sup></span>
+            <span>Yiji Cheng<sup>2</sup></span>
+            <span>Miles Yang<sup>2</sup></span>
+            <span>Zhao Zhong<sup>2</sup></span>
+            <span>Wei Cheng<sup>3</sup></span>
+            <span>Xingjun Ma<sup>1</sup></span>
+            <span>Yu-Gang Jiang<sup>1</sup></span>
+          </div>
+          <p class="affiliations">
+            <sup>1</sup>Fudan University
+            <span aria-hidden="true">·</span>
+            <sup>2</sup>Hunyuan, Tencent
+            <span aria-hidden="true">·</span>
+            <sup>3</sup>The University of Hong Kong
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#gallery">
+              Explore results
+              <span aria-hidden="true">↘</span>
+            </a>
+            <button class="button button-muted" type="button" disabled>
+              Paper · coming soon
+            </button>
+            <a class="button button-ghost" href="README.md">README</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section gallery-intro">
+          <div class="section-heading reveal">
+            <p class="section-index">01 / Results</p>
+            <h2>Identity fidelity without copying the references.</h2>
+          </div>
+
+          <div class="comparison-strip" aria-label="Comparison with GPT-Image-2">
+            <article class="comparison reveal">
+              <div class="score-expression" aria-label="0.614 is greater than 0.566">
+                <strong>0.614</strong>
+                <span class="operator">&gt;</span>
+                <span class="baseline">0.566</span>
+              </div>
+              <p>ArcFace similarity <span>↑ higher is better</span></p>
+              <div class="score-key">
+                <span><i class="key-ours"></i>WithEveryone</span>
+                <span><i class="key-baseline"></i>GPT-Image-2</span>
+              </div>
+            </article>
+            <article class="comparison reveal">
+              <div class="score-expression" aria-label="0.055 is less than 0.169">
+                <strong>0.055</strong>
+                <span class="operator">&lt;</span>
+                <span class="baseline">0.169</span>
+              </div>
+              <p>Copy-paste score <span>↓ lower is better</span></p>
+              <div class="score-key">
+                <span><i class="key-ours"></i>WithEveryone</span>
+                <span><i class="key-baseline"></i>GPT-Image-2</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="gallery-note reveal">
+            <p>
+              Hover to pause a row. Select any image to inspect its identity
+              references and move through the full collection.
+            </p>
+            <span class="live-dot" aria-hidden="true"></span>
+            <span>64 generated groups</span>
+          </div>
+        </div>
+
+        <div class="gallery-shell">
+          <div id="gallery-lanes" class="gallery-lanes" aria-label="Generated image gallery">
+            <p class="gallery-loading">Loading the gallery…</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section teaser-section" aria-label="WithEveryone teaser">
+        <figure class="hero-figure reveal">
+          <div class="figure-frame">
+            <img
+              src="assets/teaser.png"
+              alt="WithEveryone takes multiple identity references, reasons about their layout, and generates coherent group portraits."
+              width="4606"
+              height="2603"
+              loading="lazy"
+            >
+          </div>
+          <figcaption>
+            <span>Identity-aware reasoning</span>
+            <span>→</span>
+            <span>Coherent group generation</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section overview" id="overview">
+        <div class="section-heading reveal">
+          <p class="section-index">02 / Overview</p>
+          <h2>Group generation is more than adding more references.</h2>
+        </div>
+        <div class="overview-grid">
+          <div class="overview-statement reveal">
+            <p>
+              As a group grows, identity signals compete, face-to-reference
+              correspondence becomes unstable, and one misplaced person can
+              disrupt the whole composition.
+            </p>
+          </div>
+          <div class="overview-copy reveal">
+            <p>
+              WithEveryone treats identities as an addressed set rather than
+              an unordered pool. It reasons about who participates, where each
+              person belongs, and how the group should be composed before
+              synthesis begins.
+            </p>
+            <p>
+              Identity tokens, structured layout reasoning, and region-grounded
+              supervision share one unified generation context.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section method" id="method">
+        <div class="section-heading reveal">
+          <p class="section-index">03 / Method</p>
+          <h2>Plan every identity before rendering the scene.</h2>
+        </div>
+
+        <figure class="pipeline reveal">
+          <img
+            src="assets/pipeline_white.png"
+            alt="The WithEveryone pipeline loads identity tokens, applies representation forcing, reasons about layout, renders the layout, and denoises the final image."
+            width="3785"
+            height="990"
+            loading="lazy"
+          >
+        </figure>
+
+        <div class="method-cards">
+          <article class="method-card reveal">
+            <span class="method-number">01</span>
+            <h3>Address every identity</h3>
+            <p>
+              Each selected reference is projected into a dedicated ID token,
+              keeping people individually addressable in a long multimodal context.
+            </p>
+          </article>
+          <article class="method-card reveal">
+            <span class="method-number">02</span>
+            <h3>Reason about the group</h3>
+            <p>
+              Layout CoT binds identities to people, face and body regions, and
+              pose keypoints before a deterministic renderer creates the condition.
+            </p>
+          </article>
+          <article class="method-card reveal">
+            <span class="method-number">03</span>
+            <h3>Supervise the right face</h3>
+            <p>
+              Layout-Grounded ID Loss reads correspondence from annotated regions,
+              avoiding unstable face matching as the number of identities grows.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section abstract-section" id="abstract">
+        <div class="section-heading reveal">
+          <p class="section-index">04 / Abstract</p>
+          <h2>Identity–layout grounding makes group generation scale.</h2>
+        </div>
+        <div class="abstract-layout">
+          <p class="abstract-drop reveal">
+            Identity-preserving generation becomes increasingly unreliable when
+            a scene must contain many specified people.
+          </p>
+          <div class="abstract-body reveal">
+            <p>
+              Beyond retaining each identity, the model must bind every reference
+              to a distinct person and location, while training-time identity
+              losses must establish correspondence among several noisy predicted
+              faces. WithEveryone injects each selected identity as an addressed
+              token, predicts a structured identity–layout plan, and renders that
+              plan as a visual condition.
+            </p>
+            <p>
+              Layout-Grounded ID Loss supervises intended identities directly in
+              annotated face regions, while ID Representation Forcing trains a
+              prediction for each identity before image synthesis. On an
+              identity-disjoint benchmark, the system improves target-context
+              identity similarity while sharply reducing copy-paste artifacts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section release" id="release">
+        <div class="release-panel reveal">
+          <div>
+            <p class="section-index">05 / Open-source plan</p>
+            <h2>An open version is actively training.</h2>
+          </div>
+          <div class="release-copy">
+            <p>
+              The research system uses a foundation model whose license does not
+              permit checkpoint release. We are training a new version on an
+              openly releasable foundation model and will share code and weights
+              when it is ready.
+            </p>
+            <div class="release-status">
+              <span class="status-pulse" aria-hidden="true"></span>
+              Training in progress
+            </div>
+          </div>
+        </div>
+
+        <div class="citation reveal">
+          <div>
+            <p class="section-index">Citation</p>
+            <h3>BibTeX will be available with the paper release.</h3>
+          </div>
+          <code>% Coming soon.</code>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand">WithEveryone</div>
+      <p>Research preview · 2026</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <dialog class="case-modal" id="case-modal" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <div>
+          <p class="modal-kicker">Generated group</p>
+          <h2 id="modal-title">Case</h2>
+        </div>
+        <button class="icon-button" id="modal-close" type="button" aria-label="Close preview">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <figure class="modal-output">
+          <img id="modal-output" alt="">
+          <figcaption>WithEveryone output</figcaption>
+        </figure>
+        <figure class="modal-references">
+          <div class="reference-loader" id="reference-loader">Loading references…</div>
+          <img id="modal-references" alt="">
+          <figcaption>Identity references</figcaption>
+        </figure>
+      </div>
+      <div class="modal-footer">
+        <p id="modal-meta"></p>
+        <div class="modal-controls">
+          <button class="button button-ghost" id="modal-prev" type="button">← Previous</button>
+          <button class="button button-primary" id="modal-next" type="button">Next →</button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
