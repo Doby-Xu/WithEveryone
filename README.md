@@ -32,7 +32,6 @@ Code and checkpoints will be shared once the new version is ready—stay tuned!
 
 ## 📑 Citation
 
-Citation information will be available soon.
 
 ```bibtex
 @article{xu2026witheveryone,
