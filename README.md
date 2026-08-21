@@ -1,6 +1,6 @@
 # WithEveryone: Unified Planning and Identity Grounding for Group Image Generation
 
-[![arXiv](https://img.shields.io/badge/arXiv-2510.14975-b31b1b.svg)](https://arxiv.org/abs/2510.14975)
+[![arXiv](https://img.shields.io/badge/arXiv-2608.20336-b31b1b.svg)](https://arxiv.org/abs/2608.20336)
 
 [English](README.md) | [简体中文](README_CN.md)
 
@@ -35,5 +35,10 @@ Code and checkpoints will be shared once the new version is ready—stay tuned!
 Citation information will be available soon.
 
 ```bibtex
-% Coming soon.
+@article{xu2026witheveryone,
+  title={WithEveryone: Unified Planning and Identity Grounding for Group Image Generation},
+  author={Xu, Hengyuan and Wang, Qixun and Cheng, Yiji and Yang, Miles and Zhong, Zhao and Cheng, Wei and Ma, Xingjun and Jiang, Yu-Gang},
+  journal={arXiv preprint arXiv:2608.20336},
+  year={2026}
+}
 ```
