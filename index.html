@@ -10,6 +10,26 @@
     <meta name="theme-color" content="#f6f3ed">
     <title>WithEveryone: Unified Planning and Identity Grounding for Group Image Generation</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+      // Keep the published manifest intact while excluding the original Group 04.
+      window.fetch = ((originalFetch) => async (resource, options) => {
+        const response = await originalFetch(resource, options);
+        const requestUrl = typeof resource === "string" ? resource : resource.url;
+
+        if (!response.ok || !requestUrl.endsWith("assets/gallery/manifest.json")) {
+          return response;
+        }
+
+        const galleryCases = await response.json();
+        const filteredCases = galleryCases.filter(({ id }) => id !== "000220");
+
+        return new Response(JSON.stringify(filteredCases), {
+          status: response.status,
+          statusText: response.statusText,
+          headers: { "Content-Type": "application/json" },
+        });
+      })(window.fetch.bind(window));
+    </script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -113,7 +133,7 @@
               references and move through the full collection.
             </p>
             <span class="live-dot" aria-hidden="true"></span>
-            <span>64 generated groups</span>
+            <span>63 generated groups</span>
           </div>
         </div>
 
