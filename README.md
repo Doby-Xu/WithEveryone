@@ -1,6 +1,7 @@
 # WithEveryone: Unified Planning and Identity Grounding for Group Image Generation
 
-[![arXiv](https://img.shields.io/badge/arXiv-2608.20336-b31b1b.svg)](https://arxiv.org/abs/2608.20336)
+[![arXiv](https://img.shields.io/badge/arXiv-2608.20336-b31b1b.svg)](https://arxiv.org/abs/2608.20336) [![Project Page](https://img.shields.io/badge/Project-Page-2f80ed.svg)](https://doby-xu.github.io/WithEveryone/)
+
 
 [English](README.md) | [简体中文](README_CN.md)
 
