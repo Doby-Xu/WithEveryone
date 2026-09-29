@@ -5,6 +5,10 @@
 
 [English](README.md) | [简体中文](README_CN.md)
 
+## 📰 News
+
+- **2026.09** — 🚀 Try **[HY-Image 3.5 Preview](https://hy-image.org/hy-image-3-5)** ([中文](https://hy-image.org/zh/hy-image-3-5)). Experiments of **WithEveryone** were conducted on an early version of **HY-Image 3.5 Preview**, while its final version delivers even better results than those reported in our paper.
+
 **Bring everyone into the frame.**
 
 WithEveryone generates coherent group images from five to ten reference identities while preserving who is who.
